@@ -21,7 +21,7 @@ public class UI {
     }
 
     public static void clearScreen() {
-        // Works on most terminals
+        
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
