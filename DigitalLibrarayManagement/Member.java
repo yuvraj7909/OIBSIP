@@ -4,7 +4,7 @@ import java.util.List;
 public class Member {
     public enum Role { ADMIN, USER }
 
-    private String id;       // e.g. "M001"
+    private String id;       
     private String name;
     private String email;
     private String phone;
