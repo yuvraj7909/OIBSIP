@@ -14,7 +14,6 @@ public class LibraryService {
         loadSampleData();
     }
 
-    // ================== BOOK CRUD ==================
 
     public Book addBook(String title, String author, String genre, String isbn, int year) {
         Book b = new Book(nextBookId++, title, author, genre, isbn, year);
@@ -57,7 +56,7 @@ public class LibraryService {
 
     public Book getBook(int id) { return books.get(id); }
 
-    // ================== MEMBER CRUD ==================
+
 
     public Member registerMember(String name, String email, String phone, String password, Member.Role role) {
         String id = "M" + String.format("%03d", memberCounter++);
@@ -93,7 +92,6 @@ public class LibraryService {
             .findFirst().orElse(null);
     }
 
-    // ================== ISSUE & RETURN ==================
 
     public String issueBook(int bookId, String memberId) {
         Book book = books.get(bookId);
@@ -104,7 +102,7 @@ public class LibraryService {
         if (member.getBooksCount() >= 3) return "Member has reached maximum limit of 3 books.";
         if (member.getTotalFine() > 0) return "Member has pending fine of Rs." + member.getTotalFine() + ". Please clear it first.";
 
-        // If advance-booked by someone else, block
+        
         if (book.getAdvanceBookedBy() != null && !book.getAdvanceBookedBy().equals(memberId)) {
             return "This book is advance-booked by Member " + book.getAdvanceBookedBy() + ".";
         }
@@ -143,7 +141,7 @@ public class LibraryService {
         return fine > 0 ? "FINE:" + fine : "OK";
     }
 
-    // ================== ADVANCE BOOKING ==================
+    
 
     public String advanceBook(int bookId, String memberId) {
         Book book = books.get(bookId);
@@ -157,7 +155,7 @@ public class LibraryService {
         return "OK";
     }
 
-    // ================== FINE ==================
+    // fine
 
     public String payFine(String memberId) {
         Member m = members.get(memberId);
@@ -169,7 +167,7 @@ public class LibraryService {
         return "PAID:" + amt;
     }
 
-    // ================== REPORTS ==================
+    // Reports
 
     public void reportIssuedBooks() {
         List<Book> issued = books.values().stream().filter(b -> !b.isAvailable()).collect(Collectors.toList());
@@ -222,7 +220,6 @@ public class LibraryService {
         System.out.println("  +---------------------------------+");
     }
 
-    // ================== PRINT HELPERS ==================
 
     public void printBookHeader() {
         printLine(100);
@@ -247,13 +244,13 @@ public class LibraryService {
 
     public static void printLine(int len) { System.out.println("-".repeat(len)); }
 
-    // ================== SAMPLE DATA ==================
+
 
     private void loadSampleData() {
-        // Admin
+        
         Member admin = registerMember("Admin User", "admin@library.com", "9000000001", "admin123", Member.Role.ADMIN);
 
-        // Users
+    
         Member u1 = registerMember("Rahul Sharma",  "rahul@email.com",  "9876543210", "pass123", Member.Role.USER);
         Member u2 = registerMember("Priya Verma",   "priya@email.com",  "9988776655", "pass123", Member.Role.USER);
         Member u3 = registerMember("Amit Joshi",    "amit@email.com",   "9123456789", "pass123", Member.Role.USER);
@@ -268,9 +265,9 @@ public class LibraryService {
         addBook("Sapiens",                    "Yuval Noah Harari",   "History",    "978-0062316097", 2011);
         addBook("Rich Dad Poor Dad",          "Robert Kiyosaki",     "Finance",    "978-1612680194", 1997);
 
-        // Issue one book to show fine scenario
+        
         issueBook(1, u1.getId());
-        // Manually backdate to show overdue
+        
         books.get(1).setIssueDate(LocalDate.now().minusDays(20));
         books.get(1).setDueDate(LocalDate.now().minusDays(6));
 
