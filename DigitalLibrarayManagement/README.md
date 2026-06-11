@@ -1,10 +1,5 @@
 # 📚 Digital Library Management System
 
-![Java](https://img.shields.io/badge/Java-JDK%2017%2B-orange?style=for-the-badge&logo=java)
-![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
-
 A complete **Digital Library Management System** built in **Core Java** as a Console Application. It supports two roles — **Admin** and **User** — with full book management, member management, issue/return system, fine generation, advance booking, and report generation.
 
 ---
@@ -125,21 +120,6 @@ java -cp out Main
 | User | priya@email.com | pass123 |
 | User | amit@email.com | pass123 |
 
----
-
-## 📐 Class Diagram
-
-```
-Main
- ├── LibraryService       (Core Logic)
- │    ├── Book[]          (id, title, author, genre, isbn, year, status)
- │    ├── Member[]        (id, name, email, role: ADMIN/USER, books, fine)
- │    └── Transaction[]   (id, type, memberId, bookId, date, amount)
- │
- ├── AdminMenu            (Admin operations)
- ├── UserMenu             (User operations)
- └── UI                   (Input/Output helpers)
-```
 
 ---
 
@@ -204,9 +184,9 @@ Main
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- Email: your-email@example.com
+**Yuvraj Bordiya**
+- GitHub: [@yuvraj7909](https://github.com/yuvraj7909/OIBSIP.git)
+- Email: bordiyayuvraj@gmail.com
 
 ---
 
