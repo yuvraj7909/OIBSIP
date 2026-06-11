@@ -4,7 +4,6 @@ A complete **Desktop-based Online Examination System** built using **Core Java**
 
 ---
 
-## 📸 Screenshots
 
 > Login Screen → Dashboard → MCQ Exam → Results
 
@@ -122,9 +121,13 @@ chmod +x run.sh
 
 ---
 
-## 👨‍💻 Developer
+👨‍💻 Author
+Yuvraj Bordiya
 
-Made with ❤️ using Java Swing
+GitHub: @yuvraj7909
+Email: bordiyayuvraj@gmail.com
+
+
 
 ---
 
