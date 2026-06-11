@@ -11,10 +11,10 @@ public class Book {
     private String issuedToMemberId;
     private LocalDate issueDate;
     private LocalDate dueDate;
-    private String advanceBookedBy; // member ID who advance-booked
+    private String advanceBookedBy; 
 
     public static final int LOAN_DAYS = 14;
-    public static final double FINE_PER_DAY = 2.0; // Rs. 2 per day
+    public static final double FINE_PER_DAY = 2.0; 
 
     public Book(int id, String title, String author, String genre, String isbn, int year) {
         this.id = id;
@@ -26,7 +26,7 @@ public class Book {
         this.isAvailable = true;
     }
 
-    // Getters
+    
     public int getId()                  { return id; }
     public String getTitle()            { return title; }
     public String getAuthor()           { return author; }
@@ -39,7 +39,7 @@ public class Book {
     public LocalDate getDueDate()       { return dueDate; }
     public String getAdvanceBookedBy()  { return advanceBookedBy; }
 
-    // Setters
+    
     public void setTitle(String t)          { this.title = t; }
     public void setAuthor(String a)         { this.author = a; }
     public void setGenre(String g)          { this.genre = g; }
