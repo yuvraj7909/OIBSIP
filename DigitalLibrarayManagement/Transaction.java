@@ -10,7 +10,7 @@ public class Transaction {
     private String memberId;
     private int bookId;
     private LocalDateTime timestamp;
-    private double amount; // fine if any
+    private double amount; 
 
     public Transaction(Type type, String memberId, int bookId, double amount) {
         this.txnId = counter++;
